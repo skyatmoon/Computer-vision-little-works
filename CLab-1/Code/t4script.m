@@ -1,0 +1,25 @@
+color_circle=imread('color_circle.png');
+r=color_circle(:,:,1);
+g=color_circle(:,:,2);
+b=color_circle(:,:,3);
+[h,s,v]=cvRGB2HSV(r,g,b);
+figure(1);
+subplot(221),imshow(color_circle);
+title("original version");
+subplot(222),imshow(h);
+title("H channel");
+subplot(223),imshow(s);
+title("S channel");
+subplot(224),imshow(v);
+title("V channel");
+
+figure(2);
+[H,S,V]=rgb2hsv(r,g,b);
+subplot(221),imshow(color_circle);
+title("original version");
+subplot(222),imshow(H);
+title("Matlab H channel");
+subplot(223),imshow(S);
+title("Matlab S channel");
+subplot(224),imshow(V);
+title("Matlab V channel");
